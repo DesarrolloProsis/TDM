@@ -21,6 +21,8 @@ namespace TDM.Models
         //FK
         public virtual Users Users{ get; set; }
         public virtual Sections Sections { get; set; }
+        public virtual ICollection<ArticuloTag> ArticuloTags { get; set; }
+
 
     }
 }

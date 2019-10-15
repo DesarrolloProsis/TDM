@@ -166,8 +166,10 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Articles.cs" />
+    <Compile Include="Models\ArticuloTag.cs" />
     <Compile Include="Models\DataContext.cs" />
     <Compile Include="Models\Sections.cs" />
+    <Compile Include="Models\Tags.cs" />
     <Compile Include="Models\TDMContext.cs" />
     <Compile Include="Models\Users.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

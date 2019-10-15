@@ -21,6 +21,8 @@ namespace TDM.Models
 
             public DbSet<Articles> Articles { get; set; }
             public DbSet<Sections> Sections { get; set; }
+            public DbSet<Tags> Tags { get; set; }
+            public DbSet<ArticuloTag> ArticuloTags{ get; set; }
             public DbSet<Users> Users { get; set; }
 
 
@@ -28,6 +30,8 @@ namespace TDM.Models
             {
                 modelBuilder.Configurations.Add(new ArticlesMap());
                 modelBuilder.Configurations.Add(new SectionsMap());
+                modelBuilder.Configurations.Add(new TagsMap());
+                modelBuilder.Configurations.Add(new ArticuloTagMap());
                 modelBuilder.Configurations.Add(new UsersMap());
 
                 base.OnModelCreating(modelBuilder);
@@ -59,6 +63,32 @@ namespace TDM.Models
                 }
 
             }
+
+            public class TagsMap : EntityTypeConfiguration<Tags>
+            {
+                public TagsMap()
+                {
+                    ToTable("Tags");
+                    HasKey(x => x.IdTag);
+                    Property(x => x.NombreTag).HasMaxLength(30);
+
+                }
+
+            }
+
+
+            public class ArticuloTagMap : EntityTypeConfiguration<ArticuloTag>
+            {
+                public ArticuloTagMap()
+                {
+                    ToTable("ArticuloTag");
+                    HasKey(x => new { x.IdTag, x.IdArticle });
+
+                }
+
+            }
+
+
 
             public class UsersMap : EntityTypeConfiguration<Users>
             {
