@@ -75,7 +75,7 @@ namespace TDM.Models
                 Property(x => x.UserName).HasMaxLength(70);
                 Property(x => x.Nombre).HasMaxLength(50);
                 Property(x => x.Apellido).HasMaxLength(50);
-                Property(x => x.URL).HasMaxLength(100);
+                Property(x => x.ImagenURL).HasMaxLength(100);
             }
 
         }

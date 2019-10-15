@@ -13,7 +13,7 @@ namespace TDM.Models
         public string UserName{ get; set; }
         public string Nombre{ get; set; }
         public string Apellido{ get; set; }
-        public string URL { get; set;}
+        public string ImagenURL { get; set;}
 
         //FK
         public virtual ICollection<Articles> Articles { get; set; }

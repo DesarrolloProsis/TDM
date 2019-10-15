@@ -48,6 +48,7 @@ namespace TDM.Controllers
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [ValidateInput(false)]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "IdArticle,URL,Fecha,Nombre,Body,ImgURL,IdUser,IdSection")] Articles articles)
         {
@@ -64,6 +65,7 @@ namespace TDM.Controllers
         }
 
         // GET: Articles/Edit/5
+   
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -84,6 +86,7 @@ namespace TDM.Controllers
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [ValidateInput(false)]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "IdArticle,URL,Fecha,Nombre,Body,ImgURL,IdUser,IdSection")] Articles articles)
         {
